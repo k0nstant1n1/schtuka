@@ -1,0 +1,36 @@
+<?php
+function colorPick($i, $j){
+    if(($i + $j) % 2 === 0){
+        echo 'background-color: green';
+    } else
+        {echo 'background-color: yellow';}
+}
+function pickWidth($j){
+    echo "width: " . (sin(deg2rad($j*10))*100+130)/6 . "px";
+}
+function pickHeight($i){
+    echo "height: " . (sin(deg2rad($i*10))*100+130)/6 . "px";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>recursion</title>
+        <style type="text/css" rel="stylesheet">
+            div {
+                float: left;
+                border-radius: 30%;
+            }
+        </style>
+    </head>
+    <body style="background-color: yellow;>
+            <?php for($i = 25; $i < 67; $i++){
+                for($j = 25; $j < 65; $j++){ ?>
+                    <div style="<?php colorPick($i,$j) ?>; <?php pickWidth($j) ?>;
+                    <?php pickHeight($i) ?>;  <?php if($j == 25){echo "clear: left";} ?>;">
+                    </div>
+            <?php }  } ?>
+    </body>
+</html>
